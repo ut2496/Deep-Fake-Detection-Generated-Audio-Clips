@@ -1,4 +1,4 @@
-# Code taken/adapted from https://towardsdatascience.com/audio-deep-learning-made-simple-sound-classification-step-by-step-cebc936bbe5
+# Code adapted from https://towardsdatascience.com/audio-deep-learning-made-simple-sound-classification-step-by-step-cebc936bbe5
 
 import pandas as pd
 import random
@@ -77,7 +77,7 @@ class AudioUtil():
             pad_end = torch.zeros((num_rows, pad_end_len))
 
             sig = torch.cat((pad_begin, sig, pad_end), 1)
-        
+
         return (sig, sr)
 
       # ----------------------------
@@ -139,13 +139,13 @@ class SoundDS(Dataset):
     self.sr = 44100
     self.channel = 2
     self.shift_pct = 0.4
-            
+
   # ----------------------------
   # Number of items in dataset
   # ----------------------------
   def __len__(self):
-    return len(self.df)    
-    
+    return len(self.df)
+
   # ----------------------------
   # Get i'th item in dataset
   # ----------------------------
@@ -158,7 +158,7 @@ class SoundDS(Dataset):
 
     aud = AudioUtil.open(audio_file)
     # Some sounds have a higher sample rate, or fewer channels compared to the
-    # majority. So make all sounds have the same number of channels and same 
+    # majority. So make all sounds have the same number of channels and same
     # sample rate. Unless the sample rate is the same, the pad_trunc will still
     # result in arrays of different lengths, even though the sound duration is
     # the same.
