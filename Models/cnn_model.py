@@ -1,6 +1,6 @@
-# Code taken/adapted from https://towardsdatascience.com/audio-deep-learning-made-simple-sound-classification-step-by-step-cebc936bbe5
+# Code adapted from https://towardsdatascience.com/audio-deep-learning-made-simple-sound-classification-step-by-step-cebc936bbe5
 
-from pyexpat import model 
+from pyexpat import model
 import pandas as pd
 from IPython.display import Audio
 from torch.utils.data import random_split
@@ -57,7 +57,7 @@ class AudioClassifier (nn.Module):
 
         # Wrap the Convolutional Blocks
         self.conv = nn.Sequential(*conv_layers)
- 
+
     # ----------------------------
     # Forward pass computations
     # ----------------------------
